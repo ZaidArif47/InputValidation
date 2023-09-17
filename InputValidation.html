@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation Example</title>
+</head>
+<body>
+    <p>Subscribe to our Newsletter</p>
+    <form id="subform">
+        <label for="email">Email:</label>
+        <input type="email" id="emailInput" required>
+        <button type="submit">Subscribe</button>
+        <p id="message"></p>
+    </form>
+
+    <script>
+    const form = document.getElementById('subform');
+    const message = document.getElementById('message');
+    
+    form.addEventListener("submit", function(event){
+        event.preventDefault();
+
+    const emailInput = document.querySelector('#emailInput');
+    const emailValue = emailInput.value;    
+        if (isValidEmail(emailValue)) {
+            message.innerHTML = 'Subscription successful!';
+            message.style.color = 'green';
+        }
+        else {
+            message.innerHTML = 'Please enter a valid email address.';
+            message.style.color = 'red';
+        }
+    });
+
+    function isValidEmail(emailValue) {
+        let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailPattern.test(emailValue);
+    }
+    
+    </script>
+</body>
+</html>
