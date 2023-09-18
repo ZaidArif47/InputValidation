@@ -12,6 +12,14 @@
         <p id="message"></p>
     </form>
 
+    <form onsubmit="validateForm()" action="Welcome.html">
+        <input type="text" placeholder="Enter Name" id="name">
+        <br>
+        <input type="password" placeholder="Enter Password" id="pwd">
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+
     <script>
     const form = document.getElementById('subform');
     const message = document.getElementById('message');
@@ -34,6 +42,18 @@
     function isValidEmail(emailValue) {
         let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailPattern.test(emailValue);
+    }
+
+    const nameVar = document.getElementById('name');
+    const nameValue = nameVar.value;
+    const pwdVar = document.getElementById('pwd');
+    const pwdValue = pwdVar.value;
+    function validateForm() {
+        if (nameValue == '' || pwdValue == '') {
+            alert('Blank Values Not Allowed');
+        }
+        else {
+        }
     }
     
     </script>
