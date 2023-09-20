@@ -45,11 +45,11 @@
     }
 
     const nameVar = document.getElementById('name');
-    const nameValue = nameVar.value;
+    //const nameValue = nameVar.value;
     const pwdVar = document.getElementById('pwd');
-    const pwdValue = pwdVar.value;
+    //const pwdValue = pwdVar.value;
     function validateForm() {
-        if (nameValue == '' || pwdValue == '') {
+        if (nameVar.value == '' || pwdVar.value == '') {
             alert('Blank Values Not Allowed');
             return false;
         }
