@@ -12,7 +12,7 @@
         <p id="message"></p>
     </form>
 
-    <form onsubmit="validateForm()" action="Welcome.html">
+    <form onsubmit="return validateForm()" action="Welcome.html">
         <input type="text" placeholder="Enter Name" id="name">
         <br>
         <input type="password" placeholder="Enter Password" id="pwd">
@@ -51,8 +51,10 @@
     function validateForm() {
         if (nameValue == '' || pwdValue == '') {
             alert('Blank Values Not Allowed');
+            return false;
         }
         else {
+            return true;
         }
     }
     
