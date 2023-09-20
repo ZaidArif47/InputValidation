@@ -57,3 +57,41 @@ If the email string matches the pattern defined by emailPattern, test returns tr
 If the email string does not match the pattern, test returns false, indicating that the email does not meet the expected format.
 
 We then use the returned value as condition for isValidEmail function.
+
+In the second user-input
+
+The return statement in the onsubmit attribute of a form element is used to control whether the form should be submitted or not 
+based on the return value of a JavaScript function. Here's how it works:
+
+Form Submission Event: When a user submits a form by clicking a submit button or pressing Enter in an input field, the browser triggers a form submission event.
+
+onsubmit Attribute: The onsubmit attribute of the <form> element allows you to specify a JavaScript function to be executed when the form is submitted.
+
+JavaScript Function: In the onsubmit attribute, you provide the name of a JavaScript function (in this case, validateForm()) that should be called when the form is submitted.
+
+return Statement: Inside the JavaScript function (validateForm() in this case), you can use the return statement to specify whether the form should proceed 
+with its default submission behavior (e.g., sending data to the server and navigating to a new page) or whether it should be prevented from submitting.
+
+If the function returns true, the form submission proceeds as usual.
+If the function returns false, the form submission is prevented, and the default behavior is blocked.
+
+In this case:
+
+<form onsubmit="return validateForm()" action="Welcome.html">
+    <!-- Form elements -->
+</form>
+
+When the user submits the form, the validateForm() function is called.
+Inside validateForm(), if the conditions (e.g., checking if fields are empty) are met, it returns true.
+If the conditions are not met (e.g., fields are empty), it returns false.
+If validateForm() returns true, the form submission continues, and the browser navigates to the "Welcome.html" page (as specified in the action attribute of the <form>). 
+If validateForm() returns false, the form submission is prevented, and the user stays on the current page.
+
+This mechanism allows you to perform custom validation and control whether a form should be submitted based on the results of that validation. 
+It's commonly used to ensure that form data meets certain criteria (e.g., fields are not empty) before allowing submission.
+
+
+
+
+
+
