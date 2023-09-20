@@ -49,7 +49,7 @@
     const pwdVar = document.getElementById('pwd');
     //const pwdValue = pwdVar.value;
     function validateForm() {
-        if (nameVar.value == '' || pwdVar.value == '') {
+        if (nameVar.value.trim() == '' || pwdVar.value.trim() == '') {
             alert('Blank Values Not Allowed');
             return false;
         }
