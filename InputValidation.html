@@ -49,8 +49,14 @@
     const pwdVar = document.getElementById('pwd');
     //const pwdValue = pwdVar.value;
     function validateForm() {
-        if (nameVar.value.trim() == '' || pwdVar.value.trim() == '') {
-            alert('Blank Values Not Allowed');
+        if (nameVar.value.trim() == '')  {
+            alert("Name can't be blank!");
+            document.getElementById('name').style.border = "solid 3px red";
+            return false;
+        }
+        else if (pwdVar.value.trim() == '') {
+            alert("Password can't be blank!");
+            document.getElementById('pwd').style.border = "solid 3px red";
             return false;
         }
         else {
